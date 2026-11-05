@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "IBM Plex Sans KR", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+    "Malgun Gothic", sans-serif;
+  --font-serif: "Gowun Batang", "Nanum Myeongjo", ui-serif, Georgia, serif;
+
+  --color-paper: #fffcf9;
+  --color-cream: #fbf2ec;
+  --color-cream-deep: #f5e6df;
+  --color-petal-50: #fdf7f5;
+  --color-petal-100: #f9eae7;
+  --color-petal-200: #f3d9d5;
+  --color-petal-300: #e9c0bf;
+  --color-petal-400: #dda2a6;
+  --color-petal-500: #c9838f;
+  --color-petal-600: #b06a79;
+  --color-petal-700: #8e5361;
+  --color-ink: #453338;
+  --color-ink-soft: #665057;
+  --color-muted: #9c888d;
+  --color-sage: #a7b29b;
+  --color-sage-deep: #7f8d75;
+  --color-sun: #eccfa4;
+
+  --breakpoint-xs: 390px;
+
+  --shadow-soft: 0 18px 45px -30px rgba(120, 70, 80, 0.55);
+  --shadow-card: 0 10px 30px -20px rgba(120, 70, 80, 0.45);
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    background-color: #f5ebe5;
+    background-image:
+      radial-gradient(ellipse 60% 45% at 12% 4%, rgba(246, 219, 216, 0.85), transparent 70%),
+      radial-gradient(ellipse 55% 40% at 92% 18%, rgba(233, 213, 195, 0.7), transparent 70%),
+      radial-gradient(ellipse 70% 50% at 50% 100%, rgba(224, 207, 195, 0.5), transparent 75%);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  button {
+    cursor: pointer;
+    font-family: inherit;
+  }
+
+  input,
+  textarea {
+    font-family: inherit;
+  }
+
+  ::selection {
+    background: #f0cfd0;
+    color: #6d3d47;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-petal-400);
+    outline-offset: 2px;
+  }
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@keyframes fade-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes sheet-up {
+  from {
+    opacity: 0;
+    transform: translateY(36px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes veil-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes float-gentle {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-fade-rise {
+  animation: fade-rise 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-sheet-up {
+  animation: sheet-up 0.32s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-veil-in {
+  animation: veil-in 0.25s ease-out both;
+}
+
+.animate-toast-in {
+  animation: toast-in 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-float-gentle {
+  animation: float-gentle 7s ease-in-out infinite;
+}
+
+.lined-paper {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 31px,
+    rgba(201, 131, 143, 0.13) 31px,
+    rgba(201, 131, 143, 0.13) 32px
+  );
+  background-position: 0 6px;
+}

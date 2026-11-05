@@ -1,0 +1,11 @@
+{
+  "appId": "com.prayertree.app",
+  "appName": "기도노트",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  },
+  "android": {
+    "backgroundColor": "#FBF2EC"
+  }
+}
